@@ -15,11 +15,9 @@ spec:
     spec:
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
-      {{- end }}
     {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
-    {{- end }}
       containers:
       - name: {{ template "carlodeba.fullname" . }}
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
