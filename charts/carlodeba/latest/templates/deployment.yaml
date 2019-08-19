@@ -13,17 +13,10 @@ spec:
       labels:
         app: {{ template "carlodeba.fullname" . }}
     spec:
-      nodeSelector:
-{{ toYaml .Values.nodeSelector | indent 8 }}
-    {{- with .Values.tolerations }}
-      tolerations:
-{{ toYaml . | indent 8 }}
       containers:
       - name: {{ template "carlodeba.fullname" . }}
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
-        resources:
-{{ toYaml .Values.resources | indent 10 }}
         ports:
         - name: carlodeba
           containerPort: 80
