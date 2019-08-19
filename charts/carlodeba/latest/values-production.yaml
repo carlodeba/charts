@@ -2,7 +2,7 @@
 ## ref: https://cloud.docker.com/repository/docker/carlodeba/carlodeba/tags
 ##
 image:
-  registry: hub.docker.com
+  registry: docker.io
   repository: carlodeba/carlodeba
   tag: latest
   pullPolicy: IfNotPresent
