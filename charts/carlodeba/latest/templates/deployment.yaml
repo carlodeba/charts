@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Deployment
 metadata:
-  name: {{ template "carlodeba.fullname" . }}
+  name: carlodeba
   labels:
-    app: {{ template "carlodeba.fullname" . }}
+    app: carlodeba
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -11,10 +11,10 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "carlodeba.fullname" . }}
+        app: carlodeba
     spec:
       containers:
-      - name: {{ template "carlodeba.fullname" . }}
+      - name: carlodeba
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         ports:
