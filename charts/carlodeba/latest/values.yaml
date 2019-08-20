@@ -3,7 +3,8 @@ image:
   repository: carlodeba/carlodeba
   tag: latest
 
-imagePullPolicy: IfNotPresent
+#imagePullPolicy: IfNotPresent
+imagePullPolicy: Always
 
 ## Node selector
 ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
