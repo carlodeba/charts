@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "carlodeba.fullname" . }}
+  name: {{ template "carlodeba" . }}
   labels:
-    app: {{ template "carlodeba.fullname" . }}
+    app: {{ template "carlodeba" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -14,5 +14,5 @@ spec:
       port: 80
       targetPort: http
   selector:
-    app: {{ template "carlodeba.fullname" . }}
+    app: {{ template "carlodeba" . }}
 
