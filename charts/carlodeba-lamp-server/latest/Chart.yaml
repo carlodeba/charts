@@ -8,4 +8,3 @@ sources:
 - https://github.com/carlodeba/charts/tree/master/charts/carlodeba-lamp-server
 maintainers:
 - name: carlodeba
-engine: gotpl
