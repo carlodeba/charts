@@ -4,8 +4,6 @@ appVersion: 0.1
 description: LAMP server based on: mariaDB, phpmyadmin, php7.X, ngnix.
 keywords:
 - lamp
-home: 
-icon: 
 sources:
 - https://github.com/carlodeba/charts/tree/master/charts/carlodeba-lamp-server
 maintainers:
