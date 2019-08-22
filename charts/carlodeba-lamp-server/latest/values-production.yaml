@@ -3,3 +3,30 @@ image:
   repository: bitnami/mariadb
   tag: latest
   pullPolicy: Always
+  
+nodeSelector: {}
+tolerations: []
+
+livenessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  successThreshold: 1
+  failureThreshold: 3
+
+readinessProbe:
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 1
+  successThreshold: 1
+  failureThreshold: 3
+
+resources:
+  requests:
+    memory: 256Mi
+    cpu: 100m
+
+service:
+  type: ClusterIP
+  port: 3306
+  # nodePort: 32000
