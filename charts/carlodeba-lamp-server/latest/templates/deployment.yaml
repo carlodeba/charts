@@ -1,0 +1,9 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: carlodeba-lamp-server
+  labels:
+    app: carlodeba-lamp-server
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
