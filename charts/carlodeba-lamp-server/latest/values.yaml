@@ -1,0 +1,5 @@
+image:
+  #registry: docker.io
+  repository: bitnami/mariadb
+  tag: latest
+  pullPolicy: Always
