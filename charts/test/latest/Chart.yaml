@@ -1,4 +1,4 @@
-name: carlodeba
+name: test
 version: 1.0
 appVersion: latest
 description: Simple test static web site.
@@ -6,6 +6,6 @@ keywords:
 - website
 - test
 sources:
-- https://github.com/carlodeba/test
+- https://github.com/carlodeba/carlodeba
 maintainers:
 - name: carlodeba
