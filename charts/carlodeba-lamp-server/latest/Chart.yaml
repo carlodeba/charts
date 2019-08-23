@@ -1,6 +1,6 @@
 name: carlodeba-lamp-server
 version: 0.1
-appVersion: 0.1
+appVersion: latest
 description: LAMP server based on: mariaDB, phpmyadmin, php7.X, ngnix.
 keywords:
 - lamp
