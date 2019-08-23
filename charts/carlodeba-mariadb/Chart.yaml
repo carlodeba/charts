@@ -1,0 +1,11 @@
+name: carlodeba-mariadb
+version: 1.0
+appVersion: latest
+description: MariaDB standard image.
+keywords:
+- mysql
+- db
+sources:
+- https://github.com/carlodeba/carlodeba-mariadb
+maintainers:
+- name: carlodeba
