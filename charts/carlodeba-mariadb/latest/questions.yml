@@ -72,48 +72,8 @@ questions:
     description: "If undefined or  null, uses the default StorageClass. Defaults to null."
     type: storageclass
     label: Storage Class for MariaDB
-- variable: replication.enabled
-  default: true
-  description: "Enable MariaDB Replication"
-  type: boolean
-  required: true
-  label: Enable MariaDB Replication 
-  group: "Replica Settings"
-  show_subquestion_if: true
-  subquestions:
-  - variable: slave.replicas
-    default: "2"
-    description: "Desired number of slave replicas"
-    type: int
-    required: true
-    label: MariaDB Replica Count 
-    show_subquestion_if: true
-    group: "Replica Settings"
-    min: 1
-    max: 5
-  - variable: slave.persistence.enabled
-    default: false
-    description: "Enable persistent volume for MariaDB Slave"
-    type: boolean
-    required: true
-    label: Enable Persistent Volume for MariaDB Slave
-    show_subquestion_if: true
-    subquestions:
-  - variable: slave.persistence.size
-    default: "8Gi"
-    description: "MariaDB Slave Persistent Volume Size"
-    type: string
-    label: MariaDB Slave Volume Size
-    required: true
-    show_if: "slave.persistence.enabled=true"
-  - variable: slave.persistence.storageClass
-    default: ""
-    description: "If undefined or  null, uses the default StorageClass. Defaults to null."
-    type: storageclass
-    label: Storage Class for MariaDB Slave
-    show_if: "slave.persistence.enabled=true"
 - variable: service.type
-  default: "NodePort"
+  default: "ClusterIP"
   description: "MariaDB K8s Service type"
   type: enum
   options:
@@ -125,13 +85,6 @@ questions:
   group: "Services and Load Balancing"
   subquestions:
   - variable: service.nodePort.master
-    default: ""
-    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    label: Service NodePort number
-  - variable: service.nodePort.slave
     default: ""
     description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
     type: int
