@@ -1,6 +1,6 @@
 name: pippo
 version: 1.0
-appVersion: lapippo
+appVersion: latest
 description: Simple pippo static web site.
 keywords:
 - website
