@@ -1,10 +1,10 @@
-name: test
+name: pippo
 version: 1.0
-appVersion: latest
-description: Simple test static web site.
+appVersion: lapippo
+description: Simple pippo static web site.
 keywords:
 - website
-- test
+- pippo
 sources:
 - https://github.com/carlodeba/carlodeba
 maintainers:
