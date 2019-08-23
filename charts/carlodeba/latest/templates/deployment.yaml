@@ -1,9 +1,9 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: carlodeba
+  name: pippo
   labels:
-    app: carlodeba
+    app: pippo
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -11,14 +11,14 @@ spec:
   template:
     metadata:
       labels:
-        app: carlodeba
+        app: pippo
     spec:
       containers:
-      - name: carlodeba
+      - name: pippo
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         ports:
-        - name: carlodeba
+        - name: pippo
           containerPort: 80
         livenessProbe:
           httpGet:
