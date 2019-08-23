@@ -1,6 +1,6 @@
 categories:
 - Website
-- pippo
+- Pippo
 questions:
 - variable: defaultImage
   default: "true"
