@@ -1,9 +1,9 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: carlodeba
+  name: test
   labels:
-    app: carlodeba
+    app: test
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -11,14 +11,14 @@ spec:
   template:
     metadata:
       labels:
-        app: carlodeba
+        app: test
     spec:
       containers:
-      - name: carlodeba
+      - name: test
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         ports:
-        - name: carlodeba
+        - name: test
           containerPort: 80
         livenessProbe:
           httpGet:
