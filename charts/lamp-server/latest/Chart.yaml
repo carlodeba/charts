@@ -1,7 +1,7 @@
 name: lamp-server
 version: 1.0
 appVersion: latest
-description: LAMP server: mariadb, phpmyadmin.
+description: LAMP server with mariadb, phpmyadmin.
 keywords:
 - website
 - pippo
