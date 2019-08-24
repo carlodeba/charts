@@ -1,0 +1,11 @@
+name: lamp-server
+version: 1.0
+appVersion: latest
+description: Simple test static web site.
+keywords:
+- website
+- pippo
+sources:
+- https://github.com/carlodeba/carlodeba
+maintainers:
+- name: carlodeba
