@@ -1,7 +1,7 @@
 name: simple-test-site
 version: 1.0
 appVersion: latest
-description: Simple pippo static web site.
+description: Simple test static web site.
 keywords:
 - website
 - pippo
