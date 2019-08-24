@@ -1,0 +1,13 @@
+name: mariadb-server
+version: 1.0
+appVersion: latest
+description: mariadb
+keywords:
+- mysql
+- mariadb
+home: https://mariadb.org
+icon: https://raw.githubusercontent.com/docker-library/docs/74e3b3d4d60389208732dbd2c95145868111d959/mariadb/logo.png
+sources:
+- https://hub.docker.com/_/mariadb
+maintainers:
+- name: carlodeba
