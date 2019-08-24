@@ -1,4 +1,4 @@
-name: carlodeba-mariadb
+name: mariadb
 version: 1.0
 appVersion: latest
 description: MariaDB standard image.
