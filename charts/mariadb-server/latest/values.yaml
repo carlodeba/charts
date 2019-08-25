@@ -1,6 +1,6 @@
 image:
   # registry: docker.io
-  repository: mariadb
+  repository: carlodeba/mariadb
   tag: latest
 
 #imagePullPolicy: IfNotPresent
