@@ -1,9 +1,9 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: lamp-server
+  name: mariadb-server
   labels:
-    app: lamp-server
+    app: mariadb-server
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -11,15 +11,15 @@ spec:
   template:
     metadata:
       labels:
-        app: lamp-server
+        app: mariadb-server
     spec:
       containers:
-      - name: lamp-server
+      - name: mariadb-server
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         ports:
-        - name: lamp-server
-          containerPort: 80
+        - name: mariadb-server
+          containerPort: 3306
         livenessProbe:
           httpGet:
             path: /index.html
