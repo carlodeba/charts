@@ -1,6 +1,7 @@
 categories:
-- Website
-- Pippo
+- database
+- mysql
+- mariadb
 questions:
 - variable: defaultImage
   default: "true"
@@ -11,7 +12,7 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image
-    default: "carlodeba/carlodeba"
+    default: "carlodeba/mariadb"
     description: "Docker image name"
     type: string
     label: Image Name
@@ -21,22 +22,22 @@ questions:
     type: string
     label: Image Tag
 - variable: service.port
-  default: "80"
+  default: "3306"
   description: "Service port for access to NGNIX"
   type: string
-  label: NGNIX NodePort number
+  label: mariadb NodePort number
   required: true
-  group: "NGNIX Settings"
+  group: "mariadb Settings"
 - variable: service.type
   default: "ClusterIP"
-  description: "NGNIX K8s Service type"
+  description: "mariadb K8s Service type"
   type: enum
   group: "Services and Load Balancing"
   options:
     - "ClusterIP"
     - "NodePort"
   required: true
-  label: NGNIX Service Type
+  label: mariadb Service Type
   show_subquestion_if: "NodePort"
   subquestions:
   - variable: service.nodePort
