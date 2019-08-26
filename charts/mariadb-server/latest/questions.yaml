@@ -23,7 +23,7 @@ questions:
     label: Image Tag
 - variable: service.port
   default: "3306"
-  description: "Service port for access to NGNIX"
+  description: "Service port for access to mariadb"
   type: string
   label: mariadb NodePort number
   required: true
