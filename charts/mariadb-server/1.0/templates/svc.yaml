@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mariadb-server
+  labels:
+    app: mariadb-server
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  type: {{ .Values.serviceType }}
+  ports:
+    - name: mysql
+      port: {{ .Values.service.port }}
+      targetPort: http
+  selector:
+    app: mariadb-server
+

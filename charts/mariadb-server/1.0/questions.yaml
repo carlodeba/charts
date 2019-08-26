@@ -1,0 +1,92 @@
+categories:
+- database
+- mysql
+- mariadb
+questions:
+- variable: defaultImage
+  default: "true"
+  description: "Use default Docker images"
+  label: Use Default Images
+  type: boolean
+  show_subquestion_if: false
+  group: "Container Images"
+  subquestions:
+  - variable: image
+    default: "carlodeba/mariadb"
+    description: "Docker image name"
+    type: string
+    label: Image Name
+  - variable: imageTag
+    default: "latest"
+    description: "Docker image tag"
+    type: string
+    label: Image Tag
+- variable: root.password
+  default: "admin"
+  description: "ROOT password for mariadb."
+  type: password
+  label: MariaDB ROOT Password
+  required: true
+  group: "Master Settings"
+- variable: db.user
+  default: "admin"
+  description: "Username of new user to create."
+  type: string
+  label: MariaDB Database User
+  required: true
+  group: "Master Settings"
+- variable: db.password
+  default: "admin"
+  description: "Password for the new user, defaults to a random 10-character alphanumeric string if not set"
+  type: password
+  label: MariaDB Database Password
+  required: true
+  group: "Master Settings"
+- variable: db.name
+  default: "my_database"
+  description: "Name of database to create"
+  type: string
+  label: MariaDB Database Name
+  required: true
+  group: "Master Settings"    
+- variable: service.port
+  default: "3306"
+  description: "Service port for access to mariadb"
+  type: string
+  label: mariadb NodePort number
+  required: true
+  group: "mariadb Settings"
+- variable: service.type
+  default: "ClusterIP"
+  description: "mariadb K8s Service type"
+  type: enum
+  group: "Services and Load Balancing"
+  options:
+    - "ClusterIP"
+    - "NodePort"
+  required: true
+  label: mariadb Service Type
+  show_subquestion_if: "NodePort"
+  subquestions:
+  - variable: service.nodePort
+    default: ""
+    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
+    type: int
+    min: 30000
+    max: 32767
+    label: Service NodePort number
+#- variable: ingress.enabled
+#  default: true
+#  description: "Expose app using Layer 7 Load Balancer - ingress"
+#  type: boolean
+#  label: Expose app using Layer 7 Load Balancer
+#  show_subquestion_if: true
+#  group: "Services and Load Balancing"
+#  subquestions:
+#  - variable: ingress.hosts[0].name
+#    default: "xip.io"
+#    description: "Hostname to your WordPress installation"
+#    type: hostname
+#    required: true
+#    label: Hostname
+#
