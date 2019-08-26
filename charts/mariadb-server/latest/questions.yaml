@@ -40,6 +40,7 @@ questions:
   description: "Password for the new user, defaults to a random 10-character alphanumeric string if not set"
   type: password
   label: MariaDB Database Password
+  required: true
   group: "Master Settings"
 - variable: db.name
   default: "my_database"
