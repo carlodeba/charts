@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: lamp-server
+  name: mariadb-server
   labels:
-    app: lamp-server
+    app: mariadb-server
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
   type: {{ .Values.serviceType }}
   ports:
-    - name: http
-      port: 80
+    - name: mysql
+      port: {{ .Values.service.port }}
       targetPort: http
   selector:
-    app: pippo
+    app: mariadb-server
 
