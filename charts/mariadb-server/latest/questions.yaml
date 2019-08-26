@@ -21,6 +21,33 @@ questions:
     description: "Docker image tag"
     type: string
     label: Image Tag
+- variable: root.password
+  default: "admin"
+  description: "ROOT password for mariadb."
+  type: string
+  label: MariaDB ROOT password
+  required: true
+  group: "Master Settings"
+- variable: db.user
+  default: "admin"
+  description: "Username of new user to create."
+  type: string
+  label: MariaDB Database User
+  required: true
+  group: "Master Settings"
+- variable: db.password
+  default: "admin"
+  description: "Password for the new user, defaults to a random 10-character alphanumeric string if not set"
+  type: password
+  label: MariaDB Database Password
+  group: "Master Settings"
+- variable: db.name
+  default: "my_database"
+  description: "Name of database to create"
+  type: string
+  label: MariaDB Database Name
+  required: true
+  group: "Master Settings"    
 - variable: service.port
   default: "3306"
   description: "Service port for access to mariadb"
