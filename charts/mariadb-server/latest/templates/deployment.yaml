@@ -31,7 +31,7 @@ spec:
             value: "{{ .Values.db.name }}"
         livenessProbe:
           exec:
-            command: ["sh", "-c", "exec mysqladmin status -uroot -p$MARIADB_ROOT_PASSWORD"]
+            command: ["sh", "-c", "exec mysqladmin status -uroot -p$MYSQL_ROOT_PASSWORD"]
           initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
           timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
@@ -39,7 +39,7 @@ spec:
           failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
         readinessProbe:
           exec:
-            command: ["sh", "-c", "exec mysqladmin status -uroot -p$MARIADB_ROOT_PASSWORD"]
+            command: ["sh", "-c", "exec mysqladmin status -uroot -p$MYSQL_ROOT_PASSWORD"]
           initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
           timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
