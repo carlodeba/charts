@@ -24,8 +24,8 @@ questions:
 - variable: root.password
   default: "admin"
   description: "ROOT password for mariadb."
-  type: string
-  label: MariaDB ROOT password
+  type: password
+  label: MariaDB ROOT Password
   required: true
   group: "Master Settings"
 - variable: db.user
