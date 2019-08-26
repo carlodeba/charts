@@ -20,6 +20,15 @@ spec:
         ports:
         - name: mariadb-server
           containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: "{{ .Values.root.password }}"
+          - name: MARIADB_USER
+            value: "{{ .Values.db.user }}"
+          - name: MARIADB_PASSWORD
+            value: "{{ .Values.db.password }}"
+          - name: MARIADB_DATABASE
+            value: "{{ .Values.db.name }}"
         livenessProbe:
           exec:
             command: ["sh", "-c", "exec mysqladmin status -uroot -p$MARIADB_ROOT_PASSWORD"]
