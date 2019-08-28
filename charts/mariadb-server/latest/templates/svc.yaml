@@ -12,7 +12,7 @@ spec:
   ports:
     - name: mysql
       port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: mysql
   selector:
     app: mariadb-server
 
