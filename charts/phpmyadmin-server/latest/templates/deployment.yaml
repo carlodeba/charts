@@ -22,7 +22,7 @@ spec:
           containerPort: 80
         livenessProbe:
           httpGet:
-            path: /index.html
+            path: /index.php
             port: 80
           initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
@@ -32,7 +32,7 @@ spec:
 
         readinessProbe:
           httpGet:
-            path: /index.html
+            path: /index.php
             port: 80
           initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
