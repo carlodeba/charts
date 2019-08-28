@@ -5,6 +5,8 @@ description: Phpmyadmin standalone server.
 keywords:
 - phpmyadmin
 - mysql
+home: https://www.phpmyadmin.net/
+icon: https://www.phpmyadmin.net/static/images/logo.png
 sources:
 - https://github.com/carlodeba/phpmyadmin
 maintainers:
