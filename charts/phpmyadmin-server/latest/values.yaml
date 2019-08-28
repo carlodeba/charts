@@ -1,6 +1,6 @@
 image:
   # registry: docker.io
-  repository: carlodeba/carlodeba
+  repository: carlodeba/phpmyadmin
   tag: latest
 
 #imagePullPolicy: IfNotPresent
