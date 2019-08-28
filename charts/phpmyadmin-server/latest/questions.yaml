@@ -27,6 +27,20 @@ questions:
   label: phpmyadmin NodePort number
   required: true
   group: "phpmyadmin Settings"
+- variable: db.host
+  default: "mariadb-server"
+  description: "Hostname of the db server"
+  type: string
+  label: database host
+  required: true
+  group: "phpmyadmin Settings"
+- variable: db.port
+  default: "3306"
+  description: "Port of the db server"
+  type: string
+  label: database port
+  required: true
+  group: "phpmyadmin Settings"
 - variable: service.type
   default: "ClusterIP"
   description: "phpmyadmin K8s Service type"
