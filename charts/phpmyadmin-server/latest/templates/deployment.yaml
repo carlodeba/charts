@@ -20,6 +20,11 @@ spec:
         ports:
         - name: phpmyadmin
           containerPort: 80
+        env:
+          - name: PMA_HOST
+            value: "{{ .Values.db.host }}"
+          - name: PMA_PORT
+            value: "{{ .Values.db.port }}"
         livenessProbe:
           httpGet:
             path: /index.php
@@ -29,7 +34,6 @@ spec:
           timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
           successThreshold: {{ .Values.livenessProbe.successThreshold }}
           failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
-
         readinessProbe:
           httpGet:
             path: /index.php
