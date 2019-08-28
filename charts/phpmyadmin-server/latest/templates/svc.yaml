@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pippo
+  name: phpmyadmin
   labels:
-    app: pippo
+    app: phpmyadmin
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -14,5 +14,5 @@ spec:
       port: 80
       targetPort: http
   selector:
-    app: pippo
+    app: phpmyadmin
 
