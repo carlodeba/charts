@@ -1,6 +1,6 @@
 categories:
-- Website
-- Pippo
+- phpmyadmin
+- mysql
 questions:
 - variable: defaultImage
   default: "true"
@@ -11,7 +11,7 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image
-    default: "carlodeba/carlodeba"
+    default: "carlodeba/phpmyadmin"
     description: "Docker image name"
     type: string
     label: Image Name
@@ -22,21 +22,21 @@ questions:
     label: Image Tag
 - variable: service.port
   default: "80"
-  description: "Service port for access to NGNIX"
+  description: "Service port for access to phpmyadmin"
   type: string
-  label: NGNIX NodePort number
+  label: phpmyadmin NodePort number
   required: true
-  group: "NGNIX Settings"
+  group: "phpmyadmin Settings"
 - variable: service.type
   default: "ClusterIP"
-  description: "NGNIX K8s Service type"
+  description: "phpmyadmin K8s Service type"
   type: enum
   group: "Services and Load Balancing"
   options:
     - "ClusterIP"
     - "NodePort"
   required: true
-  label: NGNIX Service Type
+  label: phpmyadmin Service Type
   show_subquestion_if: "NodePort"
   subquestions:
   - variable: service.nodePort
