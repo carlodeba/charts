@@ -1,9 +1,9 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: pippo
+  name: phpmyadmin
   labels:
-    app: pippo
+    app: phpmyadmin
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -11,14 +11,14 @@ spec:
   template:
     metadata:
       labels:
-        app: pippo
+        app: phpmyadmin
     spec:
       containers:
-      - name: pippo
+      - name: phpmyadmin
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         ports:
-        - name: pippo
+        - name: phpmyadmin
           containerPort: 80
         livenessProbe:
           httpGet:
