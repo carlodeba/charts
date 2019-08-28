@@ -14,5 +14,5 @@ spec:
       port: 80
       targetPort: http
   selector:
-    app: phpmyadmin
+    app: mariadb-server
 
